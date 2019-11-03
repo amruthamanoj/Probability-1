@@ -1,0 +1,16 @@
+from itertools import combinations 
+import numpy as np  
+def comb(l, r): 
+  
+    # returns a list of all subsets of ur list 'l',  of length r 
+    
+    return list(combinations(l, r)) 
+    print(combinations(l, r))
+    
+l = [1,2,3,4] #n=4
+r = 2 . #k=2
+comb(l, r)
+
+#print("total number of combinations =",len(comb(l, r))) . #for number of combinations --> nCk
+
+
