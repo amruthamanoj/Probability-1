@@ -1,0 +1,11 @@
+from itertools import permutations
+l = [1,2,3,4]
+r=2
+def perm(l, r): 
+  
+    
+    return list(permutations(l, r)) 
+print(perm(l, r))
+print("total number =",len(perm(l, r)))
+
+
