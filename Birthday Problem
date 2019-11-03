@@ -1,0 +1,9 @@
+from math import factorial as f
+def perm(n,k):
+    P = f(n)/f(n-k)
+    return P
+
+def bpro(k): #calculates probability of 'k' people having birthday on the same day, not considering feb 29th. 
+    p = (perm(365,k))/ 365**k
+    q = 1 - p
+    return q
