@@ -1,0 +1,27 @@
+'''
+Assume that we have a set A with n elements. Any selection of r objects from A, where each object can be selected more than 
+once, is called a combination of n objects taken r at a time with repetition.
+'''
+
+#A bakery boasts eight varieties of doughnuts. If a box of doughnuts contains one dozen, 
+#how many different options are there for a box of doughnuts?
+# ans : (r+k -1)C(r) 
+
+
+q = []
+a = np.arange(1,9) #types of doughnuts = k = 8
+l = a.tolist()
+r = 12  # how many doughnuts we need in one box, r>k
+
+random.shuffle(a)
+b = a[:(8)]
+random.shuffle(a)
+d = a[:3]
+print(d)
+d = d.tolist()
+b = b.tolist()
+c = l + b  #join both the lists 
+c+d #--> this is a multiset, where since 12>8, 19-8 = 11 elements are 
+#duplicates of any of the 8 available
+p = list(combinations(c+d,r)) #diff 1 dozen combos of 8 doughnut varieties
+len(p)
