@@ -1,0 +1,23 @@
+# Pascal's formula is (n-1)C(k-1) + (n-1)Ck = nCk
+
+
+
+import random
+def pas(n,r):
+    
+    a = np.arange(1,n+1)
+    random.shuffle(a)
+    l = list(combinations(a,r)) 
+    n = len(a)
+    random.shuffle(a)
+    p = a[:(n-1)]
+    k = list(combinations(p,r-1))
+    random.shuffle(a)
+    j = a[:(n-1)]
+    m = list(combinations(j,r))
+    #print(" nCk : ", l)
+    #print("(n-1)Ck : ", m)
+    #print('(n-1)C(k-1) :', k)
+    print(" nCk : ", len(l))
+    print('(n-1)Ck : ',  len(m))
+    print('(n-1)C(k-1):',  len(k))
