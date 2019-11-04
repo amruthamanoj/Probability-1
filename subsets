@@ -1,7 +1,7 @@
 from itertools import chain, combinations
-def give_subsets(iterable):
+def give_subsets(a):
   
-    l = list(iterable)
+    l = list(a)
     return chain.from_iterable(combinations(l,n) for n in range(len(l)+1))
 
 A = {1,2,3,4}
