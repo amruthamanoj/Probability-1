@@ -9,7 +9,7 @@ Includes:
 1)Sets
 2)Binomial Theorem
 3)Permutations
-3)Combinations
+4)Combinations
      4.a) Dealing with duplicates
      4.b) Combinations with repetitions
 
