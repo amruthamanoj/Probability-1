@@ -1,0 +1,29 @@
+from math import factorial 
+
+def binomial_coeff(n=1, r=0) -> float:
+    
+    result = factorial(n)/(factorial(n-r)*factorial(r))
+    return result
+
+x = int(input("Enter the x value : "))
+y = int(input("Enter the y value : "))
+n = int(input("Enter the exponent: "))
+
+
+
+expo = n
+r = 0
+total = 0
+    
+while expo >= 0: #n cannot take values lesser than zero
+      
+    v = binomial_coeff(n, r) * ((x ** expo) * (y ** r))
+        
+    total += v
+    
+    r += 1 #r has to increase by 1 each time
+    expo -= 1 # n decreases by 1 each time
+
+  
+
+print("binomial expansion of (" + str(x)+ " + "+ str(y) + ")^" + str(n) + " gives ", total)   
