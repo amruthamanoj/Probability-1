@@ -4,7 +4,8 @@ Its basic...
 
 And covers some basic concepts in Probability using python.
 
-Topics: 
+Includes:
+
 1)Sets
 2)Binomial Theorem
 3)Permutations
