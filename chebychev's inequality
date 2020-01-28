@@ -1,0 +1,39 @@
+import numpy as np
+shape, scale = 2., 2.  # mean=4, std=2*sqrt(2)
+mu = shape*scale
+sigma = scale*np.sqrt(shape)
+s = np.random.normal(shape, scale, 1000000)
+
+import random
+# sample 10000 sample
+rs = random.choices(s, k=10000)
+
+ks = [0.1,0.5,1.0,1.5,2.0,2.5,3.0]
+# prob list
+probs = []
+# for each k
+for k in ks: 
+    # start count
+    c = 0
+    # for each data sample
+    for i in rs:
+        # count if far from mean in k standard deviation
+        if abs(i - mu) > k * sigma :
+            c += 1
+    # count divided by number of sample
+    probs.append(c/10000)
+    
+import matplotlib.pyplot as plt
+# set figure size
+plt.figure(figsize=(20,10))
+# plot each probability
+plt.plot(ks,probs, marker='o')
+# show plot
+plt.show()
+# print each probability
+print("Probability of a sample far from mean more than k standard deviation:")
+for i, prob in enumerate(probs):
+    print("k:" + str(ks[i]) + ", probability: " \
+          + str(prob)[0:5] + \
+          " | in theory, probability should less than: " \
+          + str(1/ks[i]**2)[0:5])
